@@ -47,4 +47,9 @@ ALTER TABLE produtos
 ```sql  
 ALTER TABLE produtos ADD fabricante_id INT NOT NULL AFTER preco;
 ```
+```sql  
+ALTER TABLE `produtos` 
+ADD CONSTRAINT `fk_produtos_fabricantes` FOREIGN KEY (`fabricante_id`) REFERENCES `fabricantes`(`id`) 
+ON DELETE RESTRICT ON UPDATE RESTRICT;
+```
 
