@@ -53,9 +53,28 @@ INSERT INTO proutos(nome, descricao, preco, quantidade, fabricante_id) VALUES
     5000,
     8,
     3   
+);
+INSERT INTO protutos(nome, descricao, preco, quantidade, fabricante_id) VALUES 
+('Xbox',
+    'Console de última geração com acesso aos melhores jogos e bla bla bla',
+    2500,
+    6,
+    7 
 ),
+( 'UltraBook',
+    'Equipamento com processador AMD Ryzen5, 12GB RAM, placa de video RTX ',
+    4500.68,
+    12,
+    8
+);
+
 ```
+## SELECT
+### Ler dados da tabela produtos
 ```sql
+SELECT * FROM produtos;
+SELECT nome, preco FROM produtos;
+
 ```
 ```sql
 ```
