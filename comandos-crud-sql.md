@@ -104,6 +104,18 @@ SELECT SUM(quantidade) AS "Quantidade em estoque" FROM produtos WHERE fabricante
 --  AVG (AVERAGE) MÉDIA
 SELECT AVG(preco) AS "Média dos preços" FROM produtos;
 SELECT ROUND(AVG(preco)) AS "Média dos preços" FROM produtos; -- média arredondada 
+SELECT COUNT(id) AS "Quantidade produtos" FROM prod2utos;
+-- DISTINCT pe um comando para evitar a duplicidade na contagem em campos que não são chave-primária 
+SELECT COUNT(DISTINCT fabricante_id) AS "Quantidade fabricantes" FROM produtos;
+
+SELECT nome, preco , quantidade,(preco*quantidade) AS Total FROM produtos;
+```
+### Agrupamentos
+```sql
+SELECT SUM(preco) AS Total FROM produtos GROUP BY fabricante_id;
+```
+```sql
+
 ```
 ```sql
 
