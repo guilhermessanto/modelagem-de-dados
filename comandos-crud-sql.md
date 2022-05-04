@@ -132,3 +132,55 @@ DELETE FROM farbicantes WHERE id = 4;
 
 DELETE FROM produtos WHERE preco <= 2000 AND preco > 500;
 ```
+
+```sql
+INSERT INTO generos (generos) VALUES('Aventura');
+INSERT INTO generos (generos) VALUES('Romance'),('Ação'),('Comédia'),('Animação');
+INSERT INTO filmes(titulo_do_filme, ano_lancamento, genero_id)VALUES(
+    'Indiana Jones e o Templo da perdição',
+    1984,
+    1
+);
+INSERT INTO filmes(titulo_do_filme, ano_lancamento, genero_id) VALUES(
+    'Uncharted Fora do mapa',
+    2022,
+    1
+);
+
+INSERT INTO filmes(titulo_do_filme,ano_lancamento, genero_id) VALUES(
+    'Red: Crescer é uma fera',
+    2022,
+    5
+),
+(
+    '1917',
+    2019,
+    3
+),
+(
+    'O Auto da Compadecida',
+    2000,
+    4
+),
+(
+    'Sr. & Sra. Smith',
+    2005,
+    1
+),
+(
+    'Titanic',
+    1997,
+    2
+),
+(
+    'Romeu e Julieta',
+    1968,
+    2
+);
+
+
+SELECT titulo_do_filme FROM filmes;
+
+SELECT titulo_do_filme, genero_id FROM filmes;
+SELECT titulo_do_filme FROM filmes WHERE genero = 3;
+```
