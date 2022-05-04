@@ -86,11 +86,24 @@ SELECT nome , preco, quantidade FROM produtos WHERE fabricante_id != 3; # varsao
 SELECT nome , preco FROM produtos WHERE fabricante_id IN(3,8);
 
 ```
+## FILTROS
 ```sql
-
+SELECT nome, preco FROM produtos ORDER BY nome; -- padrão ASC
+SELECT nome, preco FROM produtos ORDER BY nome DESC; -- padrão DECRESCENTE 
+-- LIKE
+SELECT nome, descricao FROM produtos WHERE descricao LIKE '%processador%'; 
+-- % operador coringa (significa qualquer texto)
 ```
+### OPERAÇÕES e FUNÇÕES de agregação 
 ```sql
+SELECT SUM(preco) FROM produtos; -- SOMA
+SELECT SUM(preco) AS TOTAL FROM produtos; -- ALIAS (apelido)
+SELECT SUM(quantidade) AS "Quantidade em estoque" FROM produtos;
+SELECT SUM(quantidade) AS "Quantidade em estoque" FROM produtos WHERE fabricante_id = 3;
 
+--  AVG (AVERAGE) MÉDIA
+SELECT AVG(preco) AS "Média dos preços" FROM produtos;
+SELECT ROUND(AVG(preco)) AS "Média dos preços" FROM produtos; -- média arredondada 
 ```
 ```sql
 
