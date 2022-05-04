@@ -112,11 +112,23 @@ SELECT nome, preco , quantidade,(preco*quantidade) AS Total FROM produtos;
 ```
 ### Agrupamentos
 ```sql
-SELECT SUM(preco) AS Total FROM produtos GROUP BY fabricante_id;
-```
-```sql
+SELECT fabricante_id, SUM(preco) AS Total FROM produtos GROUP BY fabricante_id;
+-- GROUP BY permite segmentar resultados da consulta. neste caso, somamos todos os preços e segmentos/agrupamentos por cada fabricante.
 
 ```
+## UPDATE  (SEMPRE COM WHERE)
+### Atualizar dados de uma tabela 
 ```sql
+UPDATE fabricantes SET nome = 'Microsoft Brasil' WHERE id = 7;
 
+UPDATE produtos SET preco = 5200 WHERE id = 7;
+UPDATE produtos SET quantidade = 15 WHERE fabricante_id = 1 OR fabricante_id = 3;
+```
+<!-- Mudar o preço do Ultrabook da positivo para 5200.00 -->
+<!-- Mudar a quantidade dos produtos da Asus para 15 -->
+## Excluir dados de uma tabela
+```sql
+DELETE FROM farbicantes WHERE id = 4;
+
+DELETE FROM produtos WHERE preco <= 2000 AND preco > 500;
 ```
