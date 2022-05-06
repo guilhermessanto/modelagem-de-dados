@@ -183,12 +183,25 @@ SELECT titulo_do_filme FROM filmes;
 
 SELECT titulo_do_filme, genero_id FROM filmes;
 SELECT titulo_do_filme FROM filmes WHERE genero = 3;
+SELECT filmes.titulo_do _filme, generos.generos FROM generos INNER JOIN filmes ON filmes.genero_id = generos.id;
+SELECT filmes.titulo_do _filme AS TITULO , generos.generos AS GENEROS FROM generos INNER JOIN filmes ON filmes.genero_id = generos.id;
 
 
 ```
 ### Consultas em duas ou mais tabelas (JUNÇÃO)
 ```sql
+    -- nomeDaTabela.nomeDaColuna                     Inner JOIN comando que permite juntar tabelas   ON comando para indicar o críterio da junção
+SELECT produtos.nome, fabricantes.nome FROM produtos INNER JOIN  fabricantes ON produtos.fabricante_id = fabricantes.id;
 
+--  Nome do produto e do fabricante, ordenados pelo nome do produto
+SELECT produtos.nome AS produtos, fabricantes.nome AS fabricantes 
+FROM produtos INNER JOIN fabricantes 
+ON produtos.fabricante_id = fabricantes.id ORDER BY produtos.nome;
+
+
+SELECT fabricantes.nome AS Fabricantes, SUM(produtos.preco) AS Total, 
+COUNT(produtos.fabricante_id) AS "Qtd de Produtos" FROM produtos 
+INNER JOIN fabricantes ON produtos.fabricante_id = fabricantes.id GROUP BY fabricantes ORDER BY total;
 ```
 ```sql
 
