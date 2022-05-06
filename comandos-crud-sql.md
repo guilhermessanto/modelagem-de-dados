@@ -202,8 +202,28 @@ ON produtos.fabricante_id = fabricantes.id ORDER BY produtos.nome;
 SELECT fabricantes.nome AS Fabricantes, SUM(produtos.preco) AS Total, 
 COUNT(produtos.fabricante_id) AS "Qtd de Produtos" FROM produtos 
 INNER JOIN fabricantes ON produtos.fabricante_id = fabricantes.id GROUP BY fabricantes ORDER BY total;
+
+
+SELECT fabricantes.nome AS Fabricantes,  
+    COUNT(produtos.fabricante_id) AS "Qtd de Produtos" FROM produtos 
+INNER JOIN fabricantes ON produtos.fabricante_id = fabricantes.id
+GROUP BY fabricantes;
 ```
 ```sql
+SELECT produtos.quantidade AS Quantidade,  fabricantes.nome AS Fabricante INNER JOIN fabricantes ON produtos.fabricantes_id = Fabricante.id;
+--INNER JOIN traz os registros somente daqueles fabricantes que tem produtos
+
+SELECT 
+fabricantes.nome AS Fabricantes ,
+COUNT(produtos.id) AS "Quantidade de Produtos"
+FROM produtos INNER JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id GROUP BY fabricantes;
+--RIGHT/LEFT JOIN traz os registros mesmo daqueles fabricantes que não tem produtos
+SELECT 
+fabricantes.nome AS Fabricantes ,
+COUNT(produtos.id) AS "Quantidade de Produtos"
+FROM produtos RIGHT JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id GROUP BY fabricantes;
 
 ```
 ```sql
