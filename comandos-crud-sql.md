@@ -183,4 +183,19 @@ SELECT titulo_do_filme FROM filmes;
 
 SELECT titulo_do_filme, genero_id FROM filmes;
 SELECT titulo_do_filme FROM filmes WHERE genero = 3;
+
+
+```
+### Consultas em duas ou mais tabelas (JUNÇÃO)
+```sql
+
+```
+```sql
+
+```
+```sql
+
+```
+```sql
+
 ```
